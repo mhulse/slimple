@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<script>!function(e){e.documentElement.className=e.documentElement.className.replace(/\bno-js\b/,"js")}(document);</script>
+<meta name="viewport" content="width=device-width">
+<meta name="google" content="notranslate">
+<meta http-equiv="content-language" content="en_US">
+<meta name="msvalidate.01" content="B46559147E88568614EBEBCB2BEF258C">
+<title>{% block head_title %}{% endblock head_title %} | site.com</title>
+<meta name="description" content="{% block head_description %}{% endblock head_description %}">
+<meta name="keywords" content="{% block head_keywords %}{% endblock head_keywords %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+<link rel="stylesheet" href="/assets/styles/styles.css">
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+<meta name="format-detection" content="telephone=no">
+</head>
+<body>
+<main id="container">
+<header id="masthead">
+{% if path %}
+<h6 class="flag"><a href="{{ path_for('home') }}">site.com</a></h6>
+{% else %}
+<h6>site.com</h6>
+{% endif %}
+<p>Lorem Ipsum</p>
+<nav>
+<ul>
+<li>
+{% if current_path == 'about' %}
+<span>About</span>
+{% else %}
+<a href="{{ path_for('page', { path: 'about' }) }}">About</a>
+{% endif %}
+</li>
+<li>
+{% if current_path == 'contact' %}
+<span>Contact</span>
+{% else %}
+<a href="{{ path_for('page', { path: 'contact' }) }}">Contact</a>
+{% endif %}
+</li>
+</ul>
+</nav>
+</header>
+<section id="content">
+<article>
+{% block body %}{% endblock body %}
+</article>
+</section>
+<footer>
+<div>
+Copyright © 2017 site.com. All rights reserved.</a>
+</div>
+</footer>
+</main>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+<script src="/assets/scripts/scripts.js"></script>
+</body>
+</html>
